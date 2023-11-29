@@ -386,13 +386,12 @@ function reverseWords(str) {
  *   invertCase('12345') => '12345'
  */
 function invertCase(str) {
-  return [...str]
-    .map((char) =>
-      char === char.toUpperCase()
-        ? char.toLocaleLowerCase()
-        : char.toUpperCase()
-    )
-    .join('');
+  const switchCase = (char) => {
+    const isLowerCase = char === char.toLowerCase();
+    if (isLowerCase) return char.toUpperCase();
+    return char.toLowerCase();
+  };
+  return [...str].map(switchCase).join('');
 }
 
 /**
