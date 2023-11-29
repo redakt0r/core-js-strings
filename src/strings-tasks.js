@@ -42,8 +42,8 @@ function isString(thing) {
   console.log('вход', thing);
   console.log('выход', typeof thing);
   console.log('или выход', typeof thing.valueOf());
-  // if (!thing) return false;
-  return typeof thing.valueOf() === 'string';
+  if (thing === undefined) return false;
+  return typeof thing === 'string' || typeof thing.valueOf() === 'string';
 }
 
 /**
@@ -88,8 +88,8 @@ function getFirstChar(string) {
  *   removeLeadingAndTrailingWhitespaces('cat ') => 'cat'
  *   removeLeadingAndTrailingWhitespaces('\t\t\tHello, World! ') => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces(string) {
+  return string.trim();
 }
 
 /**
@@ -103,8 +103,8 @@ function removeLeadingAndTrailingWhitespaces(/* value */) {
  *   removeLeadingWhitespaces('cat ') => 'cat '
  *   removeLeadingWhitespaces('\t\t\tHello, World! ') => 'Hello, World! '
  */
-function removeLeadingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingWhitespaces(string) {
+  return string.trimStart();
 }
 
 /**
@@ -118,8 +118,8 @@ function removeLeadingWhitespaces(/* value */) {
  *   removeTrailingWhitespaces('cat ') => 'cat'
  *   removeTrailingWhitespaces('\t\t\tHello, World! ') => '\t\t\tHello, World!'
  */
-function removeTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeTrailingWhitespaces(string) {
+  return string.trimEnd();
 }
 
 /**
@@ -135,8 +135,9 @@ function removeTrailingWhitespaces(/* value */) {
  *   repeatString('', 3) => ''
  *   repeatString('abc', -2) => ''
  */
-function repeatString(/* str, times */) {
-  throw new Error('Not implemented');
+function repeatString(string, times) {
+  const n = times > 0 ? times : 0;
+  return string.repeat(n);
 }
 
 /**
