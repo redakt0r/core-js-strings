@@ -38,8 +38,12 @@ function getStringLength(str) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(thing) {
+  console.log('вход', thing);
+  console.log('выход', typeof thing);
+  console.log('или выход', typeof thing.valueOf());
+  // if (!thing) return false;
+  return typeof thing.valueOf() === 'string';
 }
 
 /**
@@ -54,8 +58,8 @@ function isString(/* value */) {
  *   concatenateStrings('aa', '') => 'aa'.
  *   concatenateStrings('', 'bb') => 'bb'
  */
-function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function concatenateStrings(string1, string2) {
+  return string1.concat(string2);
 }
 
 /**
@@ -69,8 +73,8 @@ function concatenateStrings(/* value1, value2 */) {
  *   getFirstChar('cat') => 'c'
  *   getFirstChar('') => ''
  */
-function getFirstChar(/* value */) {
-  throw new Error('Not implemented');
+function getFirstChar(string) {
+  return string.charAt(0);
 }
 
 /**
